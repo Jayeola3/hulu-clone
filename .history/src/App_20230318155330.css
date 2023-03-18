@@ -1,11 +1,12 @@
 
-.movies{
-  text-align:center;
-  margin-bottom:18px;
-}
+
+  /* .container{
+   width: 100%;
+   margin-top: 25px;
+ } */
  .grid{
   margin:20px 0px;
-  margin-left:50px;
+  margin-left:30px;
   display: flex;
   flex-wrap: wrap;
   gap:1.5rem ;
@@ -23,12 +24,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 90%;
-  background-color:#06202A;
+  width: 80%;
   max-width: 600px;
-  max-height: 100%;
+  max-height: 90%;
   color: #fff;
   overflow: auto;
   padding: 10px;
   border-radius: 5px;
- } 
+ }

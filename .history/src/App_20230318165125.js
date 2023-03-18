@@ -12,7 +12,6 @@ import {
 	UserIcon,
 } from "@heroicons/react/outline";
 import HeaderItem from "./components/HeaderItem";
-import Footer from "./components/Footer";
 
 const API_URL="https://api.themoviedb.org/3/movie/popular?"
 const api_key= "api_key=5542202722d37080cc3fa73e17c82a61"
@@ -70,7 +69,7 @@ const changeSelect= async(e)=>{
      }
 
 	return (
-		<div className="text-center">
+		<div>
 			
 		<div className="flex flex-col items-center sm:flex-row sm:justify-between m-5 h-auto">
 			<div className="flex flex-grow justify-evenly max-w-2xl">
@@ -96,7 +95,7 @@ const changeSelect= async(e)=>{
 			
 		</div>
 
-
+		
       <div className="relative">
       <section className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide">
         {requests.map((todo) =>{
@@ -124,7 +123,7 @@ const changeSelect= async(e)=>{
 			 
 			
 
-			<Footer/>
+			
 			
 			
 		

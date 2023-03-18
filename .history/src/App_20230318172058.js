@@ -70,7 +70,7 @@ const changeSelect= async(e)=>{
      }
 
 	return (
-		<div className="text-center">
+		<div>
 			
 		<div className="flex flex-col items-center sm:flex-row sm:justify-between m-5 h-auto">
 			<div className="flex flex-grow justify-evenly max-w-2xl">

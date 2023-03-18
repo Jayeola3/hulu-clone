@@ -12,7 +12,6 @@ import {
 	UserIcon,
 } from "@heroicons/react/outline";
 import HeaderItem from "./components/HeaderItem";
-import Footer from "./components/Footer";
 
 const API_URL="https://api.themoviedb.org/3/movie/popular?"
 const api_key= "api_key=5542202722d37080cc3fa73e17c82a61"
@@ -70,7 +69,7 @@ const changeSelect= async(e)=>{
      }
 
 	return (
-		<div className="text-center">
+		<>
 			
 		<div className="flex flex-col items-center sm:flex-row sm:justify-between m-5 h-auto">
 			<div className="flex flex-grow justify-evenly max-w-2xl">
@@ -78,44 +77,40 @@ const changeSelect= async(e)=>{
 					<HeaderItem key={item.title} title={item.title} Icon={item.icon} />
 				))}
 			</div>
-			 <form onSubmit = {SearchMovie} className="flex border-2 px-3 w-full max-w-md sm:w-48 rounded-lg sm:-mt-3 mb-4 mx-8 ">
+			{/* <form onSubmit = {SearchMovie} className="flex border-2 px-3 w-full max-w-md sm:w-48 rounded-lg sm:-mt-3 mb-4 mx-8 ">
 				<input
 					onChange={changeHandler }
 					value={query}
 					placeholder = "Search a movie"
 					type="text"
-					 className=" bg-transparent appearance-none rounded w-full leading-tight focus:outline-none focus:shadow-outline"
+					className=" bg-transparent appearance-none rounded w-full leading-tight focus:outline-none focus:shadow-outline"
 				/>
 				<SearchIcon
 					onClick={SearchMovie}
-					 className="ml-2 h-10 cursor-pointer hover:text-white hover:shadow-md"
+					// className="ml-2 h-10 cursor-pointer hover:text-white hover:shadow-md"
 				/>
-			</form> 
+			</form> */}
 
-			<img className="h-6  sm:mb-6" width={120} height={100} src={hulu} alt="logo" />
+			<img className="h-6  sm:mb-6" src={hulu} alt="logo" />
 			
 		</div>
-
-
-      <div className="relative">
-      <section className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide">
+      <section className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll">
         {requests.map((todo) =>{
           return(
-            <h3 className="last:pr-24 cursor-pointer transition duration-100 transform hover:scale-125 hover:text-white active:text-red-500" key={todo.url} value={todo.url} onClick={changeSelect}>{todo.title}</h3>
+            <div><h2 className="last:pr-24 cursor-pointer transition duration-100 transform hover:scale-125 hover:text-white active:text-red-500" key={todo.url} value={todo.url} onClick={changeSelect}>{todo.title}</h2></div>
           )
         })}
       </section>
-      <div className="absolute top-0 right-0 bg-gradient-to-l from[#06202A] h-10 w-1/12" />
-      </div>
       				
 			<div className="cont">
       
 				{movies.length > 0 ?(
-					
-					<div className="px-5 my-10 sm:grid md:grid-cols-2 xl:grid-cols-4 3xl:flex flex-wrap justify-center">
+					<div className="container">
+					<div className="grid">
 					{movies.map((movieReq)=>
 				<Main  key={movieReq.id} {...movieReq}/>)}
 					</div>
+				</div>
 				):(
 					<h2> Sorry no movies Found</h2>
 				)}
@@ -124,11 +119,11 @@ const changeSelect= async(e)=>{
 			 
 			
 
-			<Footer/>
+			
 			
 			
 		
-		</div>
+		</>
 		
 	);
 }

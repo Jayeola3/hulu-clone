@@ -12,7 +12,6 @@ import {
 	UserIcon,
 } from "@heroicons/react/outline";
 import HeaderItem from "./components/HeaderItem";
-import Footer from "./components/Footer";
 
 const API_URL="https://api.themoviedb.org/3/movie/popular?"
 const api_key= "api_key=5542202722d37080cc3fa73e17c82a61"
@@ -70,7 +69,7 @@ const changeSelect= async(e)=>{
      }
 
 	return (
-		<div className="text-center">
+		<>
 			
 		<div className="flex flex-col items-center sm:flex-row sm:justify-between m-5 h-auto">
 			<div className="flex flex-grow justify-evenly max-w-2xl">
@@ -84,19 +83,17 @@ const changeSelect= async(e)=>{
 					value={query}
 					placeholder = "Search a movie"
 					type="text"
-					 className=" bg-transparent appearance-none rounded w-full leading-tight focus:outline-none focus:shadow-outline"
+					className=" bg-transparent appearance-none rounded w-full lg:w-1/4 leading-tight focus:outline-none focus:shadow-outline"
 				/>
 				<SearchIcon
 					onClick={SearchMovie}
-					 className="ml-2 h-10 cursor-pointer hover:text-white hover:shadow-md"
+					// className="ml-2 h-10 cursor-pointer hover:text-white hover:shadow-md"
 				/>
 			</form> 
 
 			<img className="h-6  sm:mb-6" width={120} height={100} src={hulu} alt="logo" />
 			
 		</div>
-
-
       <div className="relative">
       <section className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide">
         {requests.map((todo) =>{
@@ -124,11 +121,11 @@ const changeSelect= async(e)=>{
 			 
 			
 
-			<Footer/>
+			
 			
 			
 		
-		</div>
+		</>
 		
 	);
 }

@@ -2,7 +2,7 @@
   "name": "hulu_clone",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://jayeola28.github.io/hulu-clone",
+  "homepage":"https://jayeola28.github.io/hulu-clone_upload",
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.5",

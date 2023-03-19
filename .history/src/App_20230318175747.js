@@ -27,7 +27,7 @@ const headerItems = [
 ];
 function App() {
 	
-	const [movies, setMovies]=useState([ ]);
+	const [movies, setMovies]=useState([]);
 
 	const [ query, setQuery]=useState('');
 	useEffect(()=>{
@@ -42,8 +42,7 @@ const changeSelect= async(e)=>{
 	e.preventDefault();
 	console.log("search")
 	try{
-		const url =`https://api.themoviedb.org/3/`+ e.target.value;
-		console.log(url)
+		const url=`https://api.themoviedb.org/3/`+ e.target.value;
 		const res= await fetch(url)
 		const data= await res.json();
 		console.log(data)
@@ -102,7 +101,7 @@ const changeSelect= async(e)=>{
       <section className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide">
         {requests.map((todo) =>{
           return(
-            <button className="last:pr-24 cursor-pointer transition duration-100 transform hover:scale-125 hover:text-white active:text-red-500" key={todo.url} value={todo.url} onClick={changeSelect}>{todo.title}</button>
+            <h3 className="last:pr-24 cursor-pointer transition duration-100 transform hover:scale-125 hover:text-white active:text-red-500" key={todo.url} value={todo.url} onClick={changeSelect}>{todo.title}</h3>
           )
         })}
       </section>
@@ -111,7 +110,7 @@ const changeSelect= async(e)=>{
       				
 			<div className="cont">
       
-				{(movies && movies.length) > 0 ?(
+				{movies.length > 0 ?(
 					
 					<div className="px-5 my-10 sm:grid md:grid-cols-2 xl:grid-cols-4 3xl:flex flex-wrap justify-center">
 					{movies.map((movieReq)=>
